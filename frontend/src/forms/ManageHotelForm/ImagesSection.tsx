@@ -51,11 +51,11 @@ const ImagesSection = () => {
   const {
     register,
     formState: { errors },
-    watch,
-    setValue,
+    //watch,
+    //setValue,
   } = useFormContext<HotelFormData>();
 
-//   const existingImageUrls = watch("imageUrls");
+  // const existingImageUrls = watch("imageUrls");
 
 //   const handleDelete = (
 //     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
