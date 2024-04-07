@@ -34,7 +34,7 @@ app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
 const bodyParser = require("body-parser")
 
-app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.urlencoded({extended:true}))
 // app.use(cors());
 app.use(cors({
     origin: 'http://localhost:5173',
