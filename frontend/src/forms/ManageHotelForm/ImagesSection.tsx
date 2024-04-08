@@ -10,7 +10,7 @@ const ImagesSection = () => {
   } = useFormContext<HotelFormData>();
 
   const existingImageUrls = watch("imageUrls");
-
+//for handling delete of the images
   const handleDelete = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     imageUrl: string
@@ -25,6 +25,7 @@ const ImagesSection = () => {
   return (
     <div>
       <h2 className="text-2xl font-bold mb-3">Images</h2>
+      {/* for appearing the existing images  */}
       <div className="border rounded p-4 flex flex-col gap-4">
         {existingImageUrls && (
           <div className="grid grid-cols-6 gap-4">
