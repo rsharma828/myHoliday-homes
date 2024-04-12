@@ -4,7 +4,7 @@ import {
   HotelSearchResponse,
   HotelType
 } from "../../backend/src/shared/types";
-import { QueryClient } from "react-query";
+// import { QueryClient } from "react-query";
 //import { BookingFormData } from "./forms/BookingForm/BookingForm";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 
