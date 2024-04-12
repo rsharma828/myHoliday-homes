@@ -1,4 +1,4 @@
-import { startSession } from "mongoose";
+
 
 type Props = {
     selectedStars : string[];
