@@ -61,7 +61,7 @@ router.get("/", async (req: Request, res: Response) => {
   }
 });
 
-
+//adding queries to the backend
 const constructSearchQuery = (queryParams: any) => {
   let constructedQuery: any = {};
 
