@@ -25,7 +25,8 @@
     "mongodb": "^6.5.0",
     "mongoose": "^8.2.2",
     "multer": "^1.4.4",
-    "save-dev": "^0.0.1-security"
+    "save-dev": "^0.0.1-security",
+    "stripe": "^15.1.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",

@@ -37,13 +37,6 @@ export type BookingType = {
   totalCost: number;
 };
 
-
-export type PaymentIntentResponse = {
-  paymentIntentId: string;
-  clientSecret: string;
-  totalCost: number;
-};
-
 export type HotelSearchResponse = {
   data : HotelType[],
   pagination:{
@@ -52,3 +45,11 @@ export type HotelSearchResponse = {
     pages:number;
   }
 };
+
+export type PaymentIntentResponse = {
+
+  paymentIntentId : string;
+  clientSecret : string;
+  totalCost : number;
+
+}

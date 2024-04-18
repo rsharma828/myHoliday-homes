@@ -3,7 +3,10 @@ import { useQuery } from "react-query";
 import React, { useContext, useState } from "react";
 import * as apiClient from "../api-client";
 import Toast from "../components/Toast";
+import { loadStripe,Stripe } from "@stripe/stripe-js";
 
+
+const STRIPE_PUB_KEY = import.meta.env.VITE_STRIPE_PUB_KEY || "";
 
 type ToastMessage = {
     message: string;
@@ -13,9 +16,12 @@ type ToastMessage = {
 type AppContext = {
     showToast: (toastMessage: ToastMessage) => void;
     isLoggedIn : boolean;
+    stripePromise : Promise<Stripe | null >;
 };
 // for when gets in website for the first time it gets no toast message
 const AppContext = React.createContext<AppContext | undefined>(undefined);
+
+const stripePromise = loadStripe(STRIPE_PUB_KEY);
 
 export const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
 
@@ -32,7 +38,8 @@ export const AppContextProvider = ({ children }: { children: React.ReactNode }) 
                     console.log(toastMessage);
                     setToast(toastMessage);
                 },
-                isLoggedIn : !isError
+                isLoggedIn : !isError,
+                stripePromise
             }}>
             {toast && (<Toast message={toast.message}
                 type={toast.type}
