@@ -217,11 +217,12 @@ export const createPaymentIntent = async (
   if (!response.ok) {
     throw new Error("Error fetching payment intent");
   }
-
+  console.log("inside frontend of payment intent creation");
   return response.json();
 };
 
 export const createRoomBooking = async (formData: BookingFormData) => {
+console.log("inside create room booking in frontend");
   const response = await fetch(
     `${API_BASE_URL}/api/hotels/${formData.hotelId}/bookings`,
     {
