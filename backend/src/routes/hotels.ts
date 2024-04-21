@@ -2,7 +2,7 @@
 
 import express, { Request, Response } from "express";
 import Hotel from "../models/hotel";
-import { BookingType, HotelSearchResponse } from "../shared/types";
+import { BookingType, HotelSearchResponse, HotelType } from "../shared/types";
 import { param, validationResult } from "express-validator";
 import Stripe from "stripe";
 import verifyToken from "../middleware/auth";
@@ -57,10 +57,19 @@ router.get("/search", async (req: Request, res: Response) => {
   }
 });
 
-router.get("/", async (req: Request, res: Response) => {
+router.get("/", async (req: Request, res: Response)=> {
   try {
     const hotels = await Hotel.find().sort("-lastUpdated");
     res.json(hotels);
+  } catch (error) {
+    console.log("error", error);
+    res.status(500).json({ message: "Error fetching hotels" });
+  }
+});
+router.get("/budget", async (req: Request, res: Response) => {
+  try {
+    const hotels2 = await Hotel.find().sort("adultCount");
+    res.json(hotels2);
   } catch (error) {
     console.log("error", error);
     res.status(500).json({ message: "Error fetching hotels" });

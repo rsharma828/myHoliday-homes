@@ -7,8 +7,21 @@ const Home = () => {
     apiClient.fetchHotels()
   );
 
+  const { data: budgetHotels } = useQuery("fetchQuery", () =>
+    apiClient.fetchHotelsBudget()
+  );
+
+  
+
   const topRowHotels = hotels?.slice(0, 2) || [];
-  const bottomRowHotels = hotels?.slice(2) || [];
+  const bottomRowHotels = budgetHotels || [];
+  bottomRowHotels.map((hotel) => (
+    console.log(hotel.adultCount)
+  ));
+  topRowHotels.map((hotel) => (
+    console.log(hotel.lastUpdated)
+  ))
+
 
   return (
     <div className="space-y-3">
@@ -20,10 +33,13 @@ const Home = () => {
             <LatestDestinationCard hotel={hotel} />
           ))}
         </div>
+        <div>
+          <h2 className="text-4xl font-bold pb-4">Featured</h2>
         <div className="grid md:grid-cols-3 gap-4">
           {bottomRowHotels.map((hotel) => (
             <LatestDestinationCard hotel={hotel} />
           ))}
+        </div>
         </div>
       </div>
     </div>
