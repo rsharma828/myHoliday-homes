@@ -10,6 +10,7 @@ import { useAppContext } from "../contexts/AppContext";
 
 const Booking = () => {
   const { stripePromise } = useAppContext();
+  const { stripePromise } = useAppContext();
   const search = useSearchContext();
   const { hotelId } = useParams();
 
@@ -20,6 +21,7 @@ const Booking = () => {
       const nights =
         Math.abs(search.checkOut.getTime() - search.checkIn.getTime()) /
         (1000 * 60 * 60 * 24);
+      showToast({message:"Due to API Error in React 17.0.2 with stripe payment cannot be confirmed! Sorry",type:"ERROR"})
 
       setNumberOfNights(Math.ceil(nights));
     }
