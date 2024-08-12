@@ -10,7 +10,7 @@ import { useAppContext } from "../contexts/AppContext";
 
 const Booking = () => {
   const { stripePromise } = useAppContext();
-  const { stripePromise } = useAppContext();
+ const {showToast} = useAppContext();
   const search = useSearchContext();
   const { hotelId } = useParams();
 
