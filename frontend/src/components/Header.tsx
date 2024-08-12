@@ -17,7 +17,7 @@ export const Header = () => {
                         <Link className="flex items-center text-white hover:bg-blue-500 px-3 rounded-md" to="/my-bookings" >My Bookings</Link>
                         <Link className="flex items-center text-white hover:bg-blue-500 px-3 rounded-md" to="/my-hotels">My Hotels</Link>
                         <SignOutButton />
-                    </> : <Link to="/signin" className="flex items-center bg-white text-blue-600 px-3 fond-bold hover:bg-gray-100">Sign In</Link>}
+                    </> : <Link to="/sign-in" className="flex items-center bg-white text-blue-600 px-3 fond-bold hover:bg-gray-100">Sign In</Link>}
 
                 </span>
             </div>
